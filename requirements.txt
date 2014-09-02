@@ -1,0 +1,7 @@
+# install with 'pip install -r requirements.txt'
+
+Flask
+Flask-Script
+Flask-SQLAlchemy
+Flask-Login
+gunicorn
