@@ -5,3 +5,4 @@ Flask-Script
 Flask-SQLAlchemy
 Flask-Login
 gunicorn
+Flask-WTF

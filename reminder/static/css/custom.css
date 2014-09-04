@@ -20,5 +20,9 @@ body {
 
 .welcome-wrapper {
 	padding: 20px;
-	background-color: gray;
+	border-radius: 5px;
+}
+
+.welcome-wrapper > div {
+	margin-top: 13px;
 }
