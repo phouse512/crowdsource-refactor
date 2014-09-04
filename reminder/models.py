@@ -17,13 +17,13 @@ class User(Base):
 	password = Column(String(100))
 	phone = Column(String(10))
 
-	def __init__(self, name, password, phone):
-		self.name = name
+	def __init__(self, username, password, phone):
+		self.username = username
 		self.password = password
 		self.phone = phone
 
 	def __repr__(self):
-		return '<User %r>' % self.name
+		return '<User %r>' % self.username
 
 """ Aliases """
 class Alias(Base):
@@ -31,7 +31,7 @@ class Alias(Base):
 
 	id = Column(Integer, primary_key=True)
 	user_id = Column(Integer, ForeignKey('user.id'))
-	user = relationship("User", backref('aliases', order_by=id))
+	user = relationship("User", backref=backref('aliases', order_by=id))
 	alias_name = Column(String(50))
 
 	def __init__(self, user_id, alias):
@@ -47,7 +47,7 @@ class Reminder(Base):
 
 	id = Column(Integer, primary_key=True)
 	owner_id = Column(Integer, ForeignKey('user.id'))
-	owner = relationship("Owner", backref('reminders', order_by=id))
+	owner = relationship("User", backref=backref('reminders', order_by=id))
 	description = Column(String(200))
 
 	def __init__(self, owner_id, description):
