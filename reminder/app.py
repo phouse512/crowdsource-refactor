@@ -80,12 +80,12 @@ def signup():
 		new_user = User(username=name, password=pin, phone=phone)
 		db.session.add(new_user)
 		db.session.commit()
-		return render_template('welcome.html')
+		return render_template('login.html')
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('welcome'))
+    return redirect(url_for('login'))
 
 @app.route('/_add_reminder', methods=['POST'])
 def add_reminder():
