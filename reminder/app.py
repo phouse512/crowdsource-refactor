@@ -102,7 +102,8 @@ def add_reminder():
 @app.route('/_receive_text')
 def receive_text():
 	resp = twilio.twiml.Response()
-	resp.redirect("../_send_text")
+	resp.message("Hello, Mobile Monkey")
+	#resp.redirect("http://enigmatic-falls-5410.herokuapp.com/_send_text")
 	return str(resp)
 
 @app.route('/_send_text')
