@@ -70,19 +70,19 @@ class Reminder(Base):
 		return '<Reminder %r>' % self.description
 
 if __name__ == '__main__':
-	from datetime import timedelta
+	#from datetime import timedelta
 
 	from sqlalchemy import create_engine
 	from sqlalchemy.orm import sessionmaker
 
-	PWD = os.path.abspath(os.curdir)
+	#PWD = os.path.abspath(os.curdir)
 
-	engine = create_engine('postgres://PhilipHouse:house@localhost/reminder', echo=True)
+	engine = create_engine('postgres://qiyyulwagfkvzt:j_k8ydtSIEny7mwA87mCj68d9o@ec2-54-83-204-104.compute-1.amazonaws.com:5432/d9dppr2muk5dct', echo=True)
 
 	Base.metadata.create_all(engine)
 	Session = sessionmaker(bind=engine)
 	session = Session()
 
-	user = User(name='phouse512', password="3102", phone="4403343916")
+	user = User(username='phouse512', password="3102", phone="4403343916")
 	session.add(user)
 	session.commit()
