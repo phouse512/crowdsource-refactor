@@ -121,7 +121,7 @@ def send_text():
 	client.messages.create(
 		to="4403343916", 
 		from_="+14406385597", 
-		body=request.form['body'],  
+		body=request.form['Body'],  
 	)
 
 	return "hi"
