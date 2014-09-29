@@ -80,7 +80,7 @@ def signup():
 		new_user = User(username=name, password=pin, phone=phone)
 		db.session.add(new_user)
 		db.session.commit()
-		return render_template('login.html')
+		return redirect(url_for('login'))
 
 @app.route('/logout')
 def logout():
