@@ -99,11 +99,11 @@ def add_reminder():
 	return jsonify(result='success')
 
 
-@app.route('/_receive_text')
+@app.route('/_receive_text', methods=['POST'])
 def receive_text():
 	resp = twilio.twiml.Response()
-	resp.message("Hello, Mobile Monkey")
-	#resp.redirect("http://enigmatic-falls-5410.herokuapp.com/_send_text")
+	#resp.message("Hello, Mobile Monkey")
+	resp.redirect("http://enigmatic-falls-5410.herokuapp.com/_send_text")
 	return str(resp)
 
 @app.route('/_send_text')
