@@ -7,3 +7,4 @@ Flask-Login
 gunicorn
 Flask-WTF
 psycopg2
+twilio
