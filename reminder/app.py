@@ -135,7 +135,11 @@ def send_text():
 			body=remindString,  
 		)
 	except:
-		print "no"
+		client.messages.create(
+			to=request.form['From'],
+			from_="+14406385597",
+			body="Sorry, the user you tried to remind doesn't exist yet :(",
+		)
 
 
 # Example of ajax route that returns JSON
