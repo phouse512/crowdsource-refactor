@@ -109,15 +109,19 @@ def receive_text():
 @app.route('/_send_text', methods=['POST'])
 def send_text():
 
+	#request.form['body']
+
 	ACCOUNT_SID = "ACf2b361a5b8be85173d9db27f45cfb5d2" 
 	AUTH_TOKEN = "4b6edb9fb0efffc0fa1a3c293b8e16c4" 
  
 	client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
  
+
+
 	client.messages.create(
 		to="4403343916", 
 		from_="+14406385597", 
-		body="Hi!",  
+		body=request.form['body'],  
 	)
 
 	return "hi"
