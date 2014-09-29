@@ -82,3 +82,7 @@ if __name__ == '__main__':
 	Base.metadata.create_all(engine)
 	Session = sessionmaker(bind=engine)
 	session = Session()
+
+	user = User(name='phouse512', password="3102", phone="4403343916")
+	session.add(user)
+	session.commit()
