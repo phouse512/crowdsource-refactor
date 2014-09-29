@@ -99,14 +99,14 @@ def add_reminder():
 	return jsonify(result='success')
 
 
-@app.route('/_receive_text', methods=['POST'])
+@app.route('/_receive_text', methods=['GET', 'POST'])
 def receive_text():
 	resp = twilio.twiml.Response()
 	#resp.message("Hello, Mobile Monkey")
 	resp.redirect("http://enigmatic-falls-5410.herokuapp.com/_send_text")
 	return str(resp)
 
-@app.route('/_send_text')
+@app.route('/_send_text', methods=['POST'])
 def send_text():
 
 	ACCOUNT_SID = "ACf2b361a5b8be85173d9db27f45cfb5d2" 
