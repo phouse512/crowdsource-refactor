@@ -89,7 +89,7 @@ def logout():
 
 @app.route('/_add_reminder', methods=['POST'])
 def add_reminder():
-	owner_id = request.form['owner_id']
+	owner_id = g.user.id
 	description = request.form['description']
 
 	print g.user.reminders

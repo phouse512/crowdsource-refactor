@@ -41,14 +41,14 @@ function addUser(name, pin, phone){
 	});
 }
 
-function addReminder(owner_id, description){
+function addReminder(description){
 	$.ajax({
 		type: 'POST',
 		url: $SCRIPT_ROOT + '/_add_reminder',
-		data: ({ owner_id: owner_id,
-				description: description}),
+		data: ({ description: description}),
 		success: function(data, textStatus, xhr){
 			console.log(data);
+			location.reload(true)
 		},
 		error: function(xhr, textStatus, errorThrown){
 			console.log(errorThrown);

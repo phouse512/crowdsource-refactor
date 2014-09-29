@@ -17,7 +17,7 @@
 	<hr />
 	<div style="margin-bottom: 10px;" class="row">
 		<div class="col-lg-8 col-md-8">
-			<input type="text" class="form-control" placeholder="new reminder.." />
+			<input id="description" type="text" class="form-control" placeholder="new reminder.." />
 		</div>
 		<div class="col-lg-4 col-md-4">
 			<button id="addButton" class="btn btn-block btn-primary">Add</button>
@@ -28,7 +28,8 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#addButton").on('click', function(){
-			
+			description = $("#description").val();
+			addReminder(description);
 		});
 	});
 
