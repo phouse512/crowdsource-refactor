@@ -18,6 +18,7 @@ import json
 from twilio.rest import TwilioRestClient
 
 import twilio.twiml
+import random
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -119,14 +120,21 @@ def send_text():
  	try:
 		user = db.session.query(User).filter_by(username=request.form['Body']).first()
 
-		reminder = db.session.query(Reminder).filter_by(owner_id=user.id).first()
+		emptyList = []
+		reminder = db.session.query(Reminder).filter_by(owner_id=user.id)
 
+		for item in reminder:
+			emptyList.append(item)
+
+		selected = random.choice(emptyList)
+
+		remindString = "Don't forget! " + selected.description
 		client.messages.create(
 			to=user.phone, 
 			from_="+14406385597", 
-			body=reminder.description,  
+			body=remindString,  
 		)
-	except AttributeError:
+	except:
 		print "no"
 
 
