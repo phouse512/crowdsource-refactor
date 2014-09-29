@@ -115,16 +115,19 @@ def send_text():
 	AUTH_TOKEN = "4b6edb9fb0efffc0fa1a3c293b8e16c4" 
  
 	client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
- 
+ 	
+ 	try:
+		user = db.session.query(User).filter_by(username=request.form['Body']).first()
 
+		reminder = db.session.query(Reminder).filter_by(owner_id=user.id).first()
 
-	client.messages.create(
-		to="4403343916", 
-		from_="+14406385597", 
-		body=request.form['Body'],  
-	)
-
-	return "hi"
+		client.messages.create(
+			to=user.phone, 
+			from_="+14406385597", 
+			body=reminder.description,  
+		)
+	except AttributeError:
+		print "no"
 
 
 # Example of ajax route that returns JSON
