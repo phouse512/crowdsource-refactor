@@ -26,3 +26,48 @@ body {
 .welcome-wrapper > div {
 	margin-top: 13px;
 }
+
+.input-group {
+	margin-bottom: 17px;
+
+}
+
+.signin-wrapper {
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin:-200px 0 0 -200px;
+}
+
+.minimal-input {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+}
+.minimal-input:focus,
+.minimal-input.focus {
+  border-bottom: solid 2px #969696;
+}
+
+input:focus{
+outline:none;
+}
+
+.dashboard-wrapper {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 100px;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+
+.dashboard-wrapper h4 {
+	margin: 10px;
+	margin-top: 15px;
+}

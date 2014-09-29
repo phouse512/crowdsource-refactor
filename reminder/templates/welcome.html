@@ -8,21 +8,23 @@ Welcome!
 
 <div class="row">
 	<div class="col-lg-3 col-lg-offset-4 welcome-wrapper">
-		<div class="input-group">
-  			<span class="input-group-addon"><i class="fa fa-checke"></i></span>
-  			<input type="text" class="form-control" placeholder="..username..">
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon">#</span>
-			<input type="text" class="form-control" placeholder="..pin..">
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon">#</span>
-			<input type="text" class="form-control" placeholder="..phone..">
-		</div>
-		<div>
-			<button id="submit" class="btn btn-block btn-info">Begin!</button>
-		</div>
+		<form role="form" name="register" method="post" action="/welcome" enctype="multipart/form-data">
+			<div class="input-group">
+	  			<span class="input-group-addon"><i class="fa fa-checke"></i></span>
+	  			<input type="text" name="username" class="form-control" placeholder="..username..">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">#</span>
+				<input type="text" name="pin" class="form-control" placeholder="..pin..">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">#</span>
+				<input type="text" name="phone" class="form-control" placeholder="..phone..">
+			</div>
+			<div>
+				<button type="submit" id="submit" class="btn btn-block btn-info">Begin!</button>
+			</div>
+		</form>
 	</div>
 </div>
 

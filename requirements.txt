@@ -6,3 +6,4 @@ Flask-SQLAlchemy
 Flask-Login
 gunicorn
 Flask-WTF
+psycopg2

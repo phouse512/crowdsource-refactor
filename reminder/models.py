@@ -10,7 +10,7 @@ Base = declarative_base()
 
 """ User """
 class User(Base):
-	__tablename__ = 'user'
+	__tablename__ = 'reminder_user'
 
 	id = Column(Integer, primary_key=True)
 	username = Column(String(200))
@@ -22,6 +22,18 @@ class User(Base):
 		self.password = password
 		self.phone = phone
 
+	def is_authenticated(self):
+		return True
+
+	def is_active(self):
+		return True
+
+	def is_anonymous(self):
+		return False
+
+	def get_id(self):
+		return unicode(self.id)
+
 	def __repr__(self):
 		return '<User %r>' % self.username
 
@@ -30,7 +42,7 @@ class Alias(Base):
 	__tablename__ = 'alias'
 
 	id = Column(Integer, primary_key=True)
-	user_id = Column(Integer, ForeignKey('user.id'))
+	user_id = Column(Integer, ForeignKey('reminder_user.id'))
 	user = relationship("User", backref=backref('aliases', order_by=id))
 	alias_name = Column(String(50))
 
@@ -46,7 +58,7 @@ class Reminder(Base):
 	__tablename__ = 'reminder'
 
 	id = Column(Integer, primary_key=True)
-	owner_id = Column(Integer, ForeignKey('user.id'))
+	owner_id = Column(Integer, ForeignKey('reminder_user.id'))
 	owner = relationship("User", backref=backref('reminders', order_by=id))
 	description = Column(String(200))
 
@@ -65,7 +77,7 @@ if __name__ == '__main__':
 
 	PWD = os.path.abspath(os.curdir)
 
-	engine = create_engine('sqlite:///reminder.db', echo=True)
+	engine = create_engine('postgres://PhilipHouse:house@localhost/reminder', echo=True)
 
 	Base.metadata.create_all(engine)
 	Session = sessionmaker(bind=engine)

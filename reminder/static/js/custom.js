@@ -40,3 +40,18 @@ function addUser(name, pin, phone){
 		}
 	});
 }
+
+function addReminder(owner_id, description){
+	$.ajax({
+		type: 'POST',
+		url: $SCRIPT_ROOT + '/_add_reminder',
+		data: ({ owner_id: owner_id,
+				description: description}),
+		success: function(data, textStatus, xhr){
+			console.log(data);
+		},
+		error: function(xhr, textStatus, errorThrown){
+			console.log(errorThrown);
+		}
+	});
+}
