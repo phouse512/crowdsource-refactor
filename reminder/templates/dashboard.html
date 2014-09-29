@@ -7,13 +7,19 @@
 
 	<hr />
 
+
+	<ul class="list-group">
+		{% for reminder in reminders %}
+		<li class="list-group-item">{{ reminder.description }}</li>
+		{% endfor %}
+	</ul>
+
 	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1">
-			<ul class="list-group">
-				{% for reminder in reminders %}
-				<li class="list-group-item">{{ reminder.description }}</li>
-				{% endfor %}
-			</ul>
+		<div class="col-lg-8 col-md-8">
+			<input type="text" class="form-control" placeholder="new reminder.." />
+		</div>
+		<div class="col-lg-3 col-md-3">
+			<button class="btn btn-block btn-primary">Add</button>
 		</div>
 	</div>
 </div>
