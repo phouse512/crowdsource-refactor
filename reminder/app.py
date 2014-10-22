@@ -103,14 +103,11 @@ def add_reminder():
 @app.route('/_receive_text', methods=['GET', 'POST'])
 def receive_text():
 	resp = twilio.twiml.Response()
-	#resp.message("Hello, Mobile Monkey")
 	resp.redirect("http://enigmatic-falls-5410.herokuapp.com/_send_text")
 	return str(resp)
 
 @app.route('/_send_text', methods=['POST'])
 def send_text():
-
-	#request.form['body']
 
 	ACCOUNT_SID = "ACf2b361a5b8be85173d9db27f45cfb5d2" 
 	AUTH_TOKEN = "4b6edb9fb0efffc0fa1a3c293b8e16c4" 
@@ -141,6 +138,7 @@ def send_text():
 			body="Sorry, the user you tried to remind doesn't exist yet :(",
 		)
 
+	return "Good request"
 
 # Example of ajax route that returns JSON
 @app.route('/_add_numbers')
