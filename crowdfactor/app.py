@@ -3,22 +3,15 @@
 
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import LoginManager
-from flask.ext.login import login_required, login_user, current_user, logout_user
 from flask import render_template, request, jsonify, make_response, Response, flash, redirect, session, url_for, g
-from reminder.models import Base, User, Alias, Reminder
-from reminder import config
-from forms import LoginForm
+from crowdfactor.models import Base, User, Alias, Reminder
+from crowdfactor import config
+
 
 from sqlalchemy import desc, and_
 from sqlalchemy.orm import load_only
 
 import json
-
-from twilio.rest import TwilioRestClient
-
-import twilio.twiml
-import random
 
 app = Flask(__name__)
 app.config.from_object(config)
