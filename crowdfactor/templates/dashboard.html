@@ -2,26 +2,115 @@
 
 {% block content %}
 
-<div class="dashboard-wrapper">
-	<h4>Hi {{ g.user.username }}! Here are your reminders: <a class="pull-right" href="/logout">Logout</a></h4>
+<div class="row">
+	<div class="col-lg-6 col-lg-offset-1">
+		<form id="code-form">
+			<textarea id="code" rows="50">
+done = False
+while not done:
 
-	<hr />
+    import cmath
+    import time
+    import math
+    import Audio_mac
+    print "+--------------------------+"
+    print "|RAW_CALCULATOR 0.6 (BASIC)|"
+    print "|A)Addition                |"
+    print "|B)Subtraction             |"
+    print "|C)Multiplication          |"
+    print "|D)Division                |"
+    print "|E)Exponents               |"
+    print "|F)Square Root             |"
+    print "+--------------------------+"
+    usr_choice = raw_input (">>")
+    if usr_choice == "A" or usr_choice == "a":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA"
+        time.sleep(0.8)
+        c = a + b
+        print c
+    if usr_choice == "B" or usr_choice == "b":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(0.8)
+        c = a - b
+        print c
+    if usr_choice == "C" or usr_choice == "c":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a * b
+        print c
+    if usr_choice == "D" or usr_choice == "d":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a/b
+        print c
+    if usr_choice == "E" or usr_choice == "e":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a**b
+        print c
+    if usr_choice == "F" or usr_choice == "f":
+        print "What is A?"
+        a = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = math.sqrt(a)
+        print c
+    if usr_choice == "42":
+        print "The answer to the universe life and everything!"
+        time.sleep(1.8)
+        print "BLOODY FORTY TWO!"
+    print ("Try Again? Y/N")
+input = raw_input(">>")
+if input == "N" or input == "n":
+    done = True
+			</textarea>
+		</form>
 
-
-	<ul class="list-group">
-		{% for reminder in reminders %}
-		<li class="list-group-item">{{ reminder.description }}</li>
-		{% endfor %}
-	</ul>
-
-	<hr />
-	<div style="margin-bottom: 10px;" class="row">
-		<div class="col-lg-8 col-md-8">
-			<input id="description" type="text" class="form-control" placeholder="new reminder.." />
-		</div>
-		<div class="col-lg-4 col-md-4">
-			<button id="addButton" class="btn btn-block btn-primary">Add</button>
-		</div>
+	</div>
+	<div style="margin-top: 50px;" class="col-lg-4">
+		<h4>How would you restructure this?</h4>
+		<h5>In pseudo code, define some functions below to refactor the example on the right:</h5>
+		<h5>Here's an example:</h5>
+		<textarea disabled class="form-control" rows="4">
+function findTotal(priceArray)
+	//solve and calculate total with given array
+	//print total value 
+	//return someval
+		</textarea>
+		<textarea style="margin-top: 10px;" class="form-control" rows="3">
+function one()  
+	//rename and edit
+		</textarea>
+		<textarea style="margin-top: 10px;" class="form-control" rows="3">
+function two()  
+	//rename and edit
+		</textarea>
+		<textarea style="margin-top: 10px;" class="form-control" rows="3">
+function three()  
+	//rename and edit
+		</textarea>
+		<h5>You don't necessarily need all of the above, use what makes sense to you!</h5>
+		<button class="btn-block btn-primary btn">Submit</button>
 	</div>
 </div>
 
@@ -31,6 +120,16 @@
 			description = $("#description").val();
 			addReminder(description);
 		});
+
+		var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+			readOnly: true,
+			styleActiveLine: true,
+			matchBrackets: true,
+			lineNumbers: true,
+			noCursor: true
+		});
+
+		editor.setSize(700,700);
 	});
 
 </script>

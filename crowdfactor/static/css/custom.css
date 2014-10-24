@@ -1,73 +1,36 @@
-.welcome-wrapper {
-	margin-top: 200px;
-}
-
-html, body {
-	height: 100%;
-}
-
-body {
-	background-size: auto 100%;
-	background: #47b494; /* Old browsers */
-	background: -moz-linear-gradient(top, #47b494 0%, #22728e 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#47b494), color-stop(100%,#22728e)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #47b494 0%,#22728e 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #47b494 0%,#22728e 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #47b494 0%,#22728e 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #47b494 0%,#22728e 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47b494', endColorstr='#22728e',GradientType=0 ); /* IE6-9 */
-}
-
-.welcome-wrapper {
-	padding: 20px;
-	border-radius: 5px;
-}
-
-.welcome-wrapper > div {
-	margin-top: 13px;
-}
-
-.input-group {
-	margin-bottom: 17px;
-
-}
-
-.signin-wrapper {
-    margin: 0 auto;
-    width: 400px;
-    height: 400px;
-    background: white;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    margin:-200px 0 0 -200px;
-}
-
-.minimal-input {
-  padding: 10px;
-  border: none;
-  border-bottom: solid 2px #c9c9c9;
-  transition: border 0.3s;
-}
-.minimal-input:focus,
-.minimal-input.focus {
-  border-bottom: solid 2px #969696;
-}
-
-input:focus{
-outline:none;
-}
-
-.dashboard-wrapper {
-	width: 600px;
-	margin: 0 auto;
-	margin-top: 100px;
-	background: white;
-	border-radius: 5px;
+#codeContainer {
+	margin-top: 50px;
 	border: 1px solid gray;
+	border-radius: 5px;
 }
 
-.dashboard-wrapper h4 {
-	margin: 10px;
-	margin-top: 15px;
+#codeContainer > ul {
+	padding: 10px;
+}
+
+#codeContainer > ul > li {
+	padding: 3px;
+	border-radius: 0px;
+	font: normal 16px/normal "Courier New", Courier, monospace;
+}
+
+#codeContainer > ul > li > input {
+	width: 80%;
+}
+
+
+#codeContainer i {
+	padding-top: 2px;
+	padding-left: 5px;
+	cursor: pointer;
+}
+
+.removedLine {
+	background: #FF6666;
+}
+
+#code-form {
+	margin-top: 50px;
+	border: 1px solid gray;
+	border-radius: 5px;
 }

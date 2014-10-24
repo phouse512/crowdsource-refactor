@@ -8,6 +8,10 @@
         <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
+        <script src="{{ url_for('static', filename='lib/codemirror.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='lib/codemirror.css') }}">
+        <script src="{{ url_for('static', filename='mode/javascript/javascript.js') }}"></script>
+
         <script type=text/javascript>
           $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
           $(document).ready(function(){
