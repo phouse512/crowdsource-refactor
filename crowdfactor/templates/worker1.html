@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div style="margin-top: 50px;" class="col-lg-4">
+        <h4>Please replace the pseudo code in function 1 below (not-grayed out):</h4>
+        <textarea class="form-control" rows="4">
+function findTotal(priceArray)
+    //solve and calculate total with given array
+    //print total value 
+    //return someval
+        </textarea>
+        <textarea disabled style="margin-top: 10px;" class="form-control" rows="3">
+function one()  
+    //rename and edit
+        </textarea>
+        <textarea disabled style="margin-top: 10px;" class="form-control" rows="3">
+function two()  
+    //rename and edit
+        </textarea>
+        <textarea disabled style="margin-top: 10px;" class="form-control" rows="3">
+function three()  
+    //rename and edit
+        </textarea>
+        <button class="btn-block btn-primary btn">Submit</button>
+    </div>
+	<div class="col-lg-6 col-lg-offset-1">
+		<form id="code-form">
+			<textarea id="code" rows="50">
+done = False
+while not done:
+
+    import cmath
+    import time
+    import math
+    import Audio_mac
+    print "+--------------------------+"
+    print "|RAW_CALCULATOR 0.6 (BASIC)|"
+    print "|A)Addition                |"
+    print "|B)Subtraction             |"
+    print "|C)Multiplication          |"
+    print "|D)Division                |"
+    print "|E)Exponents               |"
+    print "|F)Square Root             |"
+    print "+--------------------------+"
+    usr_choice = raw_input (">>")
+    if usr_choice == "A" or usr_choice == "a":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA"
+        time.sleep(0.8)
+        c = a + b
+        print c
+    if usr_choice == "B" or usr_choice == "b":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(0.8)
+        c = a - b
+        print c
+    if usr_choice == "C" or usr_choice == "c":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a * b
+        print c
+    if usr_choice == "D" or usr_choice == "d":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a/b
+        print c
+    if usr_choice == "E" or usr_choice == "e":
+        print "What is A?"
+        a = input (">>")
+        print "What is B?"
+        b = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = a**b
+        print c
+    if usr_choice == "F" or usr_choice == "f":
+        print "What is A?"
+        a = input (">>")
+        print "PROCESSING DATA..."
+        time.sleep(1.8)
+        c = math.sqrt(a)
+        print c
+    if usr_choice == "42":
+        print "The answer to the universe life and everything!"
+        time.sleep(1.8)
+        print "BLOODY FORTY TWO!"
+    print ("Try Again? Y/N")
+input = raw_input(">>")
+if input == "N" or input == "n":
+    done = True
+			</textarea>
+		</form>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#addButton").on('click', function(){
+			description = $("#description").val();
+			addReminder(description);
+		});
+
+		var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+			readOnly: true,
+			styleActiveLine: true,
+			matchBrackets: true,
+			lineNumbers: true,
+			noCursor: true
+		});
+
+		editor.setSize(700,700);
+	});
+
+</script>
+
+{% endblock %}
